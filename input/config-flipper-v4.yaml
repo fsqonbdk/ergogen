@@ -126,68 +126,74 @@ pcbs:
         outline: cutout
     footprints:
       promicro:
-        type: promicro
-        anchor:
+        what: promicro
+        where: true
+        adjust:
           ref: board_far_home
           shift: [-25, -17]
           rotate: 0
         params:
           orientation: down
       pcm12:
-        type: pcm12
-        anchor:
+        what: pcm12
+        where: true
+        adjust:
           ref: board_far_home
           shift: [-75, -22]
           rotate: 0
-        nets:
-          from: pos  
-          to: RAW
         params:
-          reverse: true 
+          reverse: true
+          from: "{{pos}}"  
+          to: "{{RAW}}" 
       via3:
-        type: via
-        anchor: 
+        what: via
+        where: true
+        adjust: 
           ref: board_pinkie_bottom
           shift: [-2,-10]
-        nets: 
+        params: 
           net: RAW 
       via4:
-        type: via
-        anchor: 
+        what: via
+        where: true
+        adjust: 
           ref: board_pinkie_bottom
           shift: [-4,-10]
-        nets: 
+        params: 
           net: pos 
       via5:
-        type: via
-        anchor: 
+        what: via
+        where: true
+        adjust: 
           ref: board_pinkie_bottom
           shift: [8,-10]
-        nets: 
+        params: 
           net: GND 
       via6:
-        type: via
-        anchor: 
+        what: via
+        where: true
+        adjust: 
           ref: board_pinkie_bottom
           shift: [6,-10]
-        nets: 
+        params: 
           net: RST 
       b3u1000p:
-        type: b3u1000p
-        nets:
-          r1: RST  
-          r2: GND
-        anchor:
+        what: b3u1000p
+        where: true
+        adjust:
           ref: board_pinkie_bottom
           shift: [7, -15]
           rotate: 0
         params:
-          reverse: true 
+          reverse: true
+          r1: RST  
+          r2: GND
       bat:
-        type: bat
-        nets: 
+        what: bat
+        where: true
+        params: 
           neg: GND
-        anchor:
+        adjust:
           ref: board_far_bottom
           shift: [-42 , -0]
           rotate: 0
